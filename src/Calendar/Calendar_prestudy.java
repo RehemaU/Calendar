@@ -64,6 +64,7 @@ public class Calendar_prestudy
 		int[] maxdays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("반복 횟수를 입력하시오.");
+		System.out.print(">");
 		int num = scanner.nextInt();
 		int months[]=new int[num];
 		for (int i=0;i<num;i++)
