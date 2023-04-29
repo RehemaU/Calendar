@@ -9,7 +9,7 @@ public class Calendar_prestudy
 //		System.out.println(" 일 월 화 수 목 금 토");
 //		System.out.println("--------------------");
 //		int num = 1;
-//		for(int i=1;i<=4;i++)
+//		for(int i=1;i<=5;i++)
 //		{
 //			for(int j=1;j<=7;j++)
 //			{
@@ -59,24 +59,77 @@ public class Calendar_prestudy
 //		}
 //	}
 	//4
-	public static void main (String[]args)
+//	public static void main (String[]args)
+//	{
+//		int[] maxdays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.println("반복 횟수를 입력하시오.");
+//		System.out.print(">");
+//		int num = scanner.nextInt();
+//		int months[]=new int[num];
+//		for (int i=0;i<num;i++)
+//		{
+//			System.out.println("달을 입력하세요.");
+//			months[i] = scanner.nextInt();
+//		}
+//		for (int i=0;i<num;i++)
+//		{
+//			int monnum = months[i];
+//			System.out.printf("%d월은 %d일까지 있습니다. \n",months[i],maxdays[monnum-1]);
+//		}
+//		scanner.close();
+//	}
+	//5
+	public static int dateNumber (int date)
 	{
-		int[] maxdays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("반복 횟수를 입력하시오.");
-		System.out.print(">");
-		int num = scanner.nextInt();
-		int months[]=new int[num];
-		for (int i=0;i<num;i++)
+		int[] Datenumber = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		return Datenumber[date-1];
+	}
+	public static void print(int date)
+	{
+		System.out.println(" 일 월 화 수 목 금 토");
+		System.out.println("--------------------");
+		int num=1;
+		for(int i=1;i<=5;i++)
 		{
-			System.out.println("달을 입력하세요.");
-			months[i] = scanner.nextInt();
+			for(int j=1;j<=7;j++)
+			{
+				if (num<=9)
+				{
+					System.out.printf("%d",num);
+					num++;
+					
+					System.out.print("  ");
+				}
+				else if (num>9&&num<=date)
+				{
+					System.out.printf("%d",num);
+					num++;
+					
+					System.out.print(" ");
+				}
+				else
+				{
+					break;
+				}
+			}
+			System.out.println("");
 		}
-		for (int i=0;i<num;i++)
+	}
+	public static void main(String[]args)
+	{
+		Scanner scan = new Scanner(System.in);
+		while (true)
 		{
-			int monnum = months[i];
-			System.out.printf("%d월은 %d일까지 있습니다. \n",months[i],maxdays[monnum-1]);
+			int datenum = scan.nextInt();
+			if (datenum==-1)
+			{
+				break;
+			}
+			dateNumber(datenum);
+			int num = dateNumber(datenum);
+			print(num);
 		}
-		scanner.close();
+		scan.close();
 	}
 }
