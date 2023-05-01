@@ -24,7 +24,7 @@ public class Prompt {
 				continue;
 			}
 			
-			cal.printCalendar(2017, month);
+			cal.printCalendar(2012, month);
 		}
 
 		System.out.println("끝났습니다.");
