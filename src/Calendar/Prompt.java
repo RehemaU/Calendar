@@ -10,21 +10,31 @@ public class Prompt {
 		Scanner scanner = new Scanner(System.in);
 		Calendar cal = new Calendar();
 
-		int month = 1;
+		int month = 5;
+		int year = 2023;
+		String day = " ";
 
 		while (true) {
+			System.out.println("연도를 입력하세요.");
+			System.out.print("Year> ");
+			year = scanner.nextInt();
 
-			System.out.println("달을 입력하세요.");
-			System.out.print(PROMPT);
+			System.out.println("월을 입력하세요.");
+			System.out.print("Month> ");
 			month = scanner.nextInt();
-			if (month == -1) {
+
+			System.out.println("첫번째 요일을 입력하세요.");
+			System.out.print("Day> ");
+			day = scanner.next();
+			
+			if (month == -1 || year == -1) {
 				break;
 			}
 			if (month > 12) {
 				continue;
 			}
-			
-			cal.printCalendar(2012, month);
+
+			cal.printCalendar(year, month, day);
 		}
 
 		System.out.println("끝났습니다.");
